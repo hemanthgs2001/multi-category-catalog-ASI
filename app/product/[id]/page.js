@@ -2,9 +2,9 @@
 
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import productsData from '../data/products.json'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import productsData from '../../../data/products.json'
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
 
 const categoryIcons = {
   'Cars': '🚗',
