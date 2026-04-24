@@ -1,0 +1,415 @@
+{
+  "categories": [
+    "Cars",
+    "Bikes",
+    "Phones",
+    "Laptops"
+  ],
+  "products": [
+    {
+      "id": "toyota-camry",
+      "itemname": "Toyota Camry",
+      "category": "Cars",
+      "price": 4599000,
+      "originalPrice": 4999000,
+      "currency": "INR",
+      "description": "Stylish sedan with advanced safety features and comfort.",
+      "image": "Toyota.jpg",
+      "featured": true,
+      "rating": 4.5,
+      "totalReviews": 234,
+      "reviews": [
+        { "user": "Rahul S.", "rating": 5, "comment": "Excellent comfort and driving experience!" },
+        { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for its class." },
+        { "user": "Amit K.", "rating": 5, "comment": "Best sedan in this price range." }
+      ],
+      "itemprops": [
+        { "key": "Engine", "value": "2.5L 4-Cylinder" },
+        { "key": "Horsepower", "value": "203 HP" },
+        { "key": "Transmission", "value": "8-Speed Automatic" },
+        { "key": "Fuel Economy", "value": "16 km/l" },
+        { "key": "Seating", "value": "5 Passengers" }
+      ]
+    },
+    {
+      "id": "bmw-x5",
+      "itemname": "BMW X5",
+      "category": "Cars",
+      "price": 9890000,
+      "originalPrice": 10990000,
+      "currency": "INR",
+      "description": "Luxury SUV with powerful performance and premium interior.",
+      "image": "BMW.jpg",
+      "featured": true,
+      "rating": 4.8,
+      "totalReviews": 189,
+      "reviews": [
+        { "user": "Vikram P.", "rating": 5, "comment": "Ultimate driving machine! Worth every rupee." },
+        { "user": "Neha G.", "rating": 5, "comment": "Luxury redefined. Amazing comfort." },
+        { "user": "Arjun D.", "rating": 4, "comment": "Powerful engine but maintenance is expensive." }
+      ],
+      "itemprops": [
+        { "key": "Engine", "value": "3.0L Turbo I6" },
+        { "key": "Horsepower", "value": "335 HP" },
+        { "key": "Transmission", "value": "8-Speed Automatic" },
+        { "key": "Drive Type", "value": "AWD" },
+        { "key": "Seating", "value": "5-7 Passengers" }
+      ]
+    },
+    {
+      "id": "audi-a4",
+      "itemname": "Audi A4",
+      "category": "Cars",
+      "price": 4599000,
+      "originalPrice": 4999000,
+      "currency": "INR",
+      "description": "Premium sedan with elegant design and smooth drive.",
+      "image": "Audi.jpg",
+      "featured": true,
+      "rating": 4.6,
+      "totalReviews": 156,
+      "reviews": [
+        { "user": "Sandeep R.", "rating": 5, "comment": "Elegant design and superb handling." },
+        { "user": "Meera T.", "rating": 4, "comment": "Comfortable ride quality." }
+      ],
+      "itemprops": [
+        { "key": "Engine", "value": "2.0L Turbo" },
+        { "key": "Horsepower", "value": "201 HP" },
+        { "key": "Transmission", "value": "7-Speed S tronic" },
+        { "key": "Drive Type", "value": "Quattro AWD" },
+        { "key": "Seating", "value": "5 Passengers" }
+      ]
+    },
+    {
+      "id": "mercedes-c-class",
+      "itemname": "Mercedes C-Class",
+      "category": "Cars",
+      "price": 6199000,
+      "originalPrice": 6799000,
+      "currency": "INR",
+      "description": "Luxury and performance combined in one.",
+      "image": "Mercedes.jpg",
+      "featured": true,
+      "rating": 4.7,
+      "totalReviews": 201,
+      "reviews": [
+        { "user": "Rajiv M.", "rating": 5, "comment": "Pure luxury on wheels!" },
+        { "user": "Sunita A.", "rating": 5, "comment": "Best in class comfort and style." },
+        { "user": "Karan B.", "rating": 4, "comment": "Great car but expensive maintenance." }
+      ],
+      "itemprops": [
+        { "key": "Engine", "value": "2.0L Turbo" },
+        { "key": "Horsepower", "value": "255 HP" },
+        { "key": "Transmission", "value": "9G-TRONIC" },
+        { "key": "Drive Type", "value": "RWD/AWD" },
+        { "key": "Seating", "value": "5 Passengers" }
+      ]
+    },
+    {
+      "id": "royal-enfield-classic-350",
+      "itemname": "Royal Enfield Classic 350",
+      "category": "Bikes",
+      "price": 193000,
+      "originalPrice": 215000,
+      "currency": "INR",
+      "description": "Classic design with powerful engine and comfort.",
+      "image": "Royal.jpg",
+      "featured": true,
+      "rating": 4.4,
+      "totalReviews": 567,
+      "reviews": [
+        { "user": "Deepak S.", "rating": 5, "comment": "Timeless classic! Loving every ride." },
+        { "user": "Ravi K.", "rating": 4, "comment": "Great thump and comfortable rides." },
+        { "user": "Anita J.", "rating": 4, "comment": "Perfect for long highway rides." }
+      ],
+      "itemprops": [
+        { "key": "Engine", "value": "349cc" },
+        { "key": "Power", "value": "20.2 HP" },
+        { "key": "Torque", "value": "27 Nm" },
+        { "key": "Mileage", "value": "35 km/l" },
+        { "key": "Weight", "value": "195 kg" }
+      ]
+    },
+    {
+      "id": "yamaha-r15",
+      "itemname": "Yamaha R15",
+      "category": "Bikes",
+      "price": 182000,
+      "originalPrice": 195000,
+      "currency": "INR",
+      "description": "155cc sports bike with great mileage and speed.",
+      "image": "Yamaha.jpg",
+      "featured": true,
+      "rating": 4.6,
+      "totalReviews": 432,
+      "reviews": [
+        { "user": "Arun P.", "rating": 5, "comment": "Best sports bike under 2 lakh!" },
+        { "user": "Vikash R.", "rating": 5, "comment": "Amazing performance and handling." },
+        { "user": "Sneha D.", "rating": 4, "comment": "Great mileage for a sports bike." }
+      ],
+      "itemprops": [
+        { "key": "Engine", "value": "155cc" },
+        { "key": "Power", "value": "18.6 HP" },
+        { "key": "Torque", "value": "14.1 Nm" },
+        { "key": "Mileage", "value": "45 km/l" },
+        { "key": "Weight", "value": "142 kg" }
+      ]
+    },
+    {
+      "id": "ktm-duke-390",
+      "itemname": "KTM Duke 390",
+      "category": "Bikes",
+      "price": 297000,
+      "originalPrice": 320000,
+      "currency": "INR",
+      "description": "Powerful performance with aggressive styling.",
+      "image": "KTM.jpg",
+      "featured": false,
+      "rating": 4.7,
+      "totalReviews": 389,
+      "reviews": [
+        { "user": "Rohit M.", "rating": 5, "comment": "Beast on the streets! Incredible power." },
+        { "user": "Pooja K.", "rating": 4, "comment": "Aggressive styling, turns heads everywhere." },
+        { "user": "Sanjay V.", "rating": 5, "comment": "Best naked sports bike in segment." }
+      ],
+      "itemprops": [
+        { "key": "Engine", "value": "373cc" },
+        { "key": "Power", "value": "43.5 HP" },
+        { "key": "Torque", "value": "37 Nm" },
+        { "key": "Mileage", "value": "25 km/l" },
+        { "key": "Weight", "value": "171 kg" }
+      ]
+    },
+    {
+      "id": "honda-cb-shine",
+      "itemname": "Honda CB Shine",
+      "category": "Bikes",
+      "price": 83000,
+      "originalPrice": 89000,
+      "currency": "INR",
+      "description": "Reliable commuter bike with excellent mileage.",
+      "image": "Honda.jpg",
+      "featured": true,
+      "rating": 4.3,
+      "totalReviews": 892,
+      "reviews": [
+        { "user": "Mohan L.", "rating": 5, "comment": "Best commuter bike! Excellent mileage." },
+        { "user": "Geeta R.", "rating": 4, "comment": "Very reliable and low maintenance cost." },
+        { "user": "Prakash D.", "rating": 4, "comment": "Perfect for daily city commute." }
+      ],
+      "itemprops": [
+        { "key": "Engine", "value": "124cc" },
+        { "key": "Power", "value": "10.7 HP" },
+        { "key": "Torque", "value": "10.9 Nm" },
+        { "key": "Mileage", "value": "65 km/l" },
+        { "key": "Weight", "value": "114 kg" }
+      ]
+    },
+    {
+      "id": "iphone-14",
+      "itemname": "iPhone 14",
+      "category": "Phones",
+      "price": 69900,
+      "originalPrice": 79900,
+      "currency": "INR",
+      "description": "A16 Bionic chip, amazing camera, all-day battery.",
+      "image": "Apple.jpg",
+      "featured": true,
+      "rating": 4.7,
+      "totalReviews": 1023,
+      "reviews": [
+        { "user": "Ananya S.", "rating": 5, "comment": "Best iPhone ever! Camera is stunning." },
+        { "user": "Rohit G.", "rating": 5, "comment": "Smooth performance, great battery life." },
+        { "user": "Divya P.", "rating": 4, "comment": "Excellent phone but price is high." }
+      ],
+      "itemprops": [
+        { "key": "Display", "value": "6.1-inch OLED" },
+        { "key": "Processor", "value": "A16 Bionic" },
+        { "key": "RAM", "value": "6 GB" },
+        { "key": "Storage", "value": "128 GB" },
+        { "key": "Camera", "value": "48 MP + 12 MP" },
+        { "key": "Battery", "value": "3279 mAh" }
+      ]
+    },
+    {
+      "id": "samsung-galaxy-s23",
+      "itemname": "Samsung Galaxy S23",
+      "category": "Phones",
+      "price": 54999,
+      "originalPrice": 64999,
+      "currency": "INR",
+      "description": "Powerful Android phone with stunning display.",
+      "image": "Galaxy.jpg",
+      "featured": true,
+      "rating": 4.5,
+      "totalReviews": 876,
+      "reviews": [
+        { "user": "Vivek M.", "rating": 5, "comment": "Display is absolutely gorgeous!" },
+        { "user": "Kavita S.", "rating": 4, "comment": "Great camera and smooth performance." },
+        { "user": "Abhishek D.", "rating": 4, "comment": "Best Android flagship at this price." }
+      ],
+      "itemprops": [
+        { "key": "Display", "value": "6.1-inch AMOLED" },
+        { "key": "Processor", "value": "Snapdragon 8 Gen 2" },
+        { "key": "RAM", "value": "8 GB" },
+        { "key": "Storage", "value": "128 GB" },
+        { "key": "Camera", "value": "50 MP + 12 MP + 10 MP" },
+        { "key": "Battery", "value": "3900 mAh" }
+      ]
+    },
+    {
+      "id": "oneplus-11r",
+      "itemname": "OnePlus 11R",
+      "category": "Phones",
+      "price": 39999,
+      "originalPrice": 44999,
+      "currency": "INR",
+      "description": "Fast performance, 100W charging, smooth experience.",
+      "image": "OnePlus.jpg",
+      "featured": true,
+      "rating": 4.4,
+      "totalReviews": 654,
+      "reviews": [
+        { "user": "Rahul C.", "rating": 5, "comment": "100W charging is a game changer!" },
+        { "user": "Neeraj K.", "rating": 4, "comment": "Smooth performance, great value." },
+        { "user": "Shweta P.", "rating": 4, "comment": "Excellent phone for the price." }
+      ],
+      "itemprops": [
+        { "key": "Display", "value": "6.74-inch AMOLED" },
+        { "key": "Processor", "value": "Snapdragon 8+ Gen 1" },
+        { "key": "RAM", "value": "8 GB" },
+        { "key": "Storage", "value": "128 GB" },
+        { "key": "Camera", "value": "50 MP + 8 MP + 2 MP" },
+        { "key": "Battery", "value": "5000 mAh" }
+      ]
+    },
+    {
+      "id": "xiaomi-13-pro",
+      "itemname": "Xiaomi 13 Pro",
+      "category": "Phones",
+      "price": 49999,
+      "originalPrice": 59999,
+      "currency": "INR",
+      "description": "Leica camera, Snapdragon 8 Gen 2, premium design.",
+      "image": "Xiaomi.jpg",
+      "featured": true,
+      "rating": 4.6,
+      "totalReviews": 543,
+      "reviews": [
+        { "user": "Amit V.", "rating": 5, "comment": "Leica cameras are incredible!" },
+        { "user": "Sneha M.", "rating": 5, "comment": "Premium feel and amazing performance." },
+        { "user": "Rajesh P.", "rating": 4, "comment": "Best camera phone in this segment." }
+      ],
+      "itemprops": [
+        { "key": "Display", "value": "6.73-inch LTPO AMOLED" },
+        { "key": "Processor", "value": "Snapdragon 8 Gen 2" },
+        { "key": "RAM", "value": "12 GB" },
+        { "key": "Storage", "value": "256 GB" },
+        { "key": "Camera", "value": "50 MP Leica Triple" },
+        { "key": "Battery", "value": "4820 mAh" }
+      ]
+    },
+    {
+      "id": "macbook-air-m2",
+      "itemname": "MacBook Air M2",
+      "category": "Laptops",
+      "price": 114900,
+      "originalPrice": 129900,
+      "currency": "INR",
+      "description": "Powerful M2 chip, sleek design, all-day battery.",
+      "image": "MacBook.jpg",
+      "featured": true,
+      "rating": 4.8,
+      "totalReviews": 765,
+      "reviews": [
+        { "user": "Priyanka D.", "rating": 5, "comment": "M2 chip is incredibly fast! Love it." },
+        { "user": "Suresh N.", "rating": 5, "comment": "Sleek design and amazing battery life." },
+        { "user": "Mehak K.", "rating": 4, "comment": "Perfect for work and travel." }
+      ],
+      "itemprops": [
+        { "key": "Processor", "value": "Apple M2" },
+        { "key": "RAM", "value": "8 GB" },
+        { "key": "Storage", "value": "256 GB SSD" },
+        { "key": "Display", "value": "13.6-inch Liquid Retina" },
+        { "key": "Battery", "value": "18 hours" },
+        { "key": "Weight", "value": "1.24 kg" }
+      ]
+    },
+    {
+      "id": "dell-xps-13",
+      "itemname": "Dell XPS 13",
+      "category": "Laptops",
+      "price": 89990,
+      "originalPrice": 99990,
+      "currency": "INR",
+      "description": "Compact laptop with powerful performance and infinity display.",
+      "image": "Dell.jpg",
+      "featured": true,
+      "rating": 4.5,
+      "totalReviews": 432,
+      "reviews": [
+        { "user": "Harish T.", "rating": 5, "comment": "Infinity display is stunning!" },
+        { "user": "Nalini S.", "rating": 4, "comment": "Compact and powerful. Great for professionals." }
+      ],
+      "itemprops": [
+        { "key": "Processor", "value": "Intel Core i7-1250U" },
+        { "key": "RAM", "value": "16 GB" },
+        { "key": "Storage", "value": "512 GB SSD" },
+        { "key": "Display", "value": "13.4-inch FHD+" },
+        { "key": "Battery", "value": "12 hours" },
+        { "key": "Weight", "value": "1.17 kg" }
+      ]
+    },
+    {
+      "id": "hp-spectre-x360",
+      "itemname": "HP Spectre x360",
+      "category": "Laptops",
+      "price": 104990,
+      "originalPrice": 119990,
+      "currency": "INR",
+      "description": "2-in-1 laptop with touchscreen and long battery life.",
+      "image": "hp.jpg",
+      "featured": true,
+      "rating": 4.6,
+      "totalReviews": 321,
+      "reviews": [
+        { "user": "Deepak M.", "rating": 5, "comment": "Versatile 2-in-1 with brilliant display." },
+        { "user": "Ritu K.", "rating": 4, "comment": "Perfect for creative professionals." }
+      ],
+      "itemprops": [
+        { "key": "Processor", "value": "Intel Core i7-1355U" },
+        { "key": "RAM", "value": "16 GB" },
+        { "key": "Storage", "value": "512 GB SSD" },
+        { "key": "Display", "value": "13.5-inch OLED Touch" },
+        { "key": "Battery", "value": "16 hours" },
+        { "key": "Weight", "value": "1.36 kg" }
+      ]
+    },
+    {
+      "id": "lenovo-thinkpad-x1",
+      "itemname": "Lenovo ThinkPad X1",
+      "category": "Laptops",
+      "price": 134990,
+      "originalPrice": 149990,
+      "currency": "INR",
+      "description": "Business laptop with powerful performance and security.",
+      "image": "lenovo.jpg",
+      "featured": true,
+      "rating": 4.7,
+      "totalReviews": 298,
+      "reviews": [
+        { "user": "Arunima S.", "rating": 5, "comment": "Best business laptop! Very secure and fast." },
+        { "user": "Manish P.", "rating": 5, "comment": "Reliable workhorse with great keyboard." },
+        { "user": "Vidya R.", "rating": 4, "comment": "Perfect for corporate use." }
+      ],
+      "itemprops": [
+        { "key": "Processor", "value": "Intel Core i7-1365U" },
+        { "key": "RAM", "value": "16 GB" },
+        { "key": "Storage", "value": "512 GB SSD" },
+        { "key": "Display", "value": "14-inch WUXGA" },
+        { "key": "Battery", "value": "15 hours" },
+        { "key": "Weight", "value": "1.12 kg" }
+      ]
+    }
+  ]
+}

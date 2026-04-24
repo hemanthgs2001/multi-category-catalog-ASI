@@ -1,0 +1,80 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Package lock files (optional - usually you want to keep one)
+# package-lock.json
+# yarn.lock
+
+# Images (if you want to keep them out of git)
+# public/images/*.jpg
+# public/images/*.png
+# public/images/*.jpeg
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+
+# Cache
+.cache
+.eslintcache
+.stylelintcache
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# Temporary files
+tmp/
+temp/
