@@ -1,16 +1,18 @@
 'use client'
 
 import { useParams, useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { FaCar, FaMotorcycle, FaMobileAlt, FaLaptop, FaBoxOpen } from 'react-icons/fa'
 import productsData from '../../../data/products.json'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 
 const categoryIcons = {
-  'Cars': '🚗',
-  'Bikes': '🏍️',
-  'Phones': '📱',
-  'Laptops': '💻'
+  'Cars': <FaCar size={80} color="#888" />,
+  'Bikes': <FaMotorcycle size={80} color="#888" />,
+  'Phones': <FaMobileAlt size={80} color="#888" />,
+  'Laptops': <FaLaptop size={80} color="#888" />,
 }
 
 const StarRating = ({ rating, totalReviews, size = 'medium' }) => {
@@ -49,9 +51,7 @@ const StarRating = ({ rating, totalReviews, size = 'medium' }) => {
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-      <div style={{ display: 'flex', gap: '2px' }}>
-        {stars}
-      </div>
+      <div style={{ display: 'flex', gap: '2px' }}>{stars}</div>
       <span style={{ fontSize: size === 'large' ? '16px' : '14px', color: '#666' }}>
         {rating} out of 5 {totalReviews > 0 ? `(${totalReviews} reviews)` : ''}
       </span>
@@ -64,6 +64,71 @@ export default function ProductDetailPage() {
   const router = useRouter()
   const product = productsData.products.find(p => p.id === params.id)
 
+  const [mounted, setMounted] = useState(false)
+  const [isAddedToCart, setIsAddedToCart] = useState(false)
+  const [imageError, setImageError] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    if (!product) return
+    try {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+      setIsAddedToCart(cart.some(item => item.id === product.id))
+    } catch {
+      setIsAddedToCart(false)
+    }
+  }, [product?.id])
+
+  useEffect(() => {
+    if (!mounted || !product) return
+
+    const syncCartState = () => {
+      try {
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+        setIsAddedToCart(cart.some(item => item.id === product.id))
+      } catch {
+        setIsAddedToCart(false)
+      }
+    }
+
+    window.addEventListener('storage', syncCartState)
+    window.addEventListener('cartUpdated', syncCartState)
+
+    return () => {
+      window.removeEventListener('storage', syncCartState)
+      window.removeEventListener('cartUpdated', syncCartState)
+    }
+  }, [product?.id, mounted])
+
+  const handleAddToCart = () => {
+    if (!product) return
+    try {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+      const alreadyInCart = cart.some(item => item.id === product.id)
+      if (!alreadyInCart) {
+        const updatedCart = [...cart, { ...product, quantity: 1 }]
+        localStorage.setItem('cart', JSON.stringify(updatedCart))
+        setIsAddedToCart(true)
+        window.dispatchEvent(new Event('cartUpdated'))
+      }
+    } catch (err) {
+      console.error('Failed to update cart:', err)
+    }
+  }
+
+  const handleRemoveFromCart = () => {
+    if (!product) return
+    try {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+      const updatedCart = cart.filter(item => item.id !== product.id)
+      localStorage.setItem('cart', JSON.stringify(updatedCart))
+      setIsAddedToCart(false)
+      window.dispatchEvent(new Event('cartUpdated'))
+    } catch (err) {
+      console.error('Failed to remove from cart:', err)
+    }
+  }
+
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',
@@ -73,11 +138,10 @@ export default function ProductDetailPage() {
     }).format(price)
   }
 
-  const discount = product?.originalPrice 
+  const discount = product?.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0
 
-  // Handler for category changes - redirects to home page with category filter
   const handleCategoryChange = (category) => {
     if (category === 'All') {
       router.push('/')
@@ -89,8 +153,8 @@ export default function ProductDetailPage() {
   if (!product) {
     return (
       <>
-        <Header 
-          categories={productsData.categories} 
+        <Header
+          categories={productsData.categories}
           activeCategory="All"
           onCategoryChange={handleCategoryChange}
         />
@@ -110,8 +174,8 @@ export default function ProductDetailPage() {
 
   return (
     <>
-      <Header 
-        categories={productsData.categories} 
+      <Header
+        categories={productsData.categories}
         activeCategory={product.category}
         onCategoryChange={handleCategoryChange}
       />
@@ -126,28 +190,29 @@ export default function ProductDetailPage() {
 
         <div className="detail-card">
           <div className="detail-image-container" style={{ position: 'relative' }}>
-            <img 
-              src={`/${product.image}`}
-              alt={product.itemname}
-              className="detail-image"
-              onError={(e) => {
-                e.target.style.display = 'none'
-                e.target.parentElement.textContent = categoryIcons[product.category] || '📦'
-                e.target.parentElement.style.fontSize = '120px'
-              }}
-            />
-            {discount > 0 && (
-              <span style={{
-                position: 'absolute',
-                top: '20px',
-                right: '20px',
-                background: '#e53935',
-                color: 'white',
-                padding: '8px 16px',
-                borderRadius: '8px',
-                fontSize: '16px',
-                fontWeight: 'bold'
+            {!imageError ? (
+              <img
+                src={`/${product.image}`}
+                alt={product.itemname}
+                className="detail-image"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100%',
+                height: '100%',
+                minHeight: '300px',
+                background: '#f5f5f5',
+                borderRadius: '12px',
               }}>
+                {categoryIcons[product.category] || <FaBoxOpen size={80} color="#888" />}
+              </div>
+            )}
+            {discount > 0 && (
+              <span className="discount-badge">
                 {discount}% OFF
               </span>
             )}
@@ -164,9 +229,9 @@ export default function ProductDetailPage() {
               <div style={{ textAlign: 'right' }}>
                 <span className="detail-price">{formatPrice(product.price)}</span>
                 {product.originalPrice && (
-                  <div style={{ 
-                    textDecoration: 'line-through', 
-                    color: '#999', 
+                  <div style={{
+                    textDecoration: 'line-through',
+                    color: '#999',
                     fontSize: '18px',
                     marginTop: '5px'
                   }}>
@@ -187,6 +252,37 @@ export default function ProductDetailPage() {
 
             <p className="detail-description">{product.description}</p>
 
+            {/* ✅ Add to Cart button */}
+            <button
+              className="add-to-cart-btn"
+              onClick={handleAddToCart}
+              disabled={mounted && isAddedToCart}
+              style={mounted && isAddedToCart ? { opacity: 0.75, cursor: 'not-allowed' } : {}}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+              {mounted && isAddedToCart ? 'Added to Cart' : 'Add to Cart'}
+            </button>
+
+            {/* ✅ Remove from Cart button — only visible after item is added */}
+            {mounted && isAddedToCart && (
+              <button
+                className="remove-from-cart-btn"
+                onClick={handleRemoveFromCart}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <polyline points="3 6 5 6 21 6"/>
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                  <path d="M10 11v6M14 11v6"/>
+                  <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+                </svg>
+                Remove from Cart
+              </button>
+            )}
+
             {product.itemprops && product.itemprops.length > 0 && (
               <>
                 <h3 className="props-title">Specifications</h3>
@@ -201,7 +297,6 @@ export default function ProductDetailPage() {
               </>
             )}
 
-            {/* Customer Reviews Section */}
             {product.reviews && product.reviews.length > 0 && (
               <div style={{ marginTop: '40px' }}>
                 <h3 className="props-title">Customer Reviews</h3>

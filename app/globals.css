@@ -1000,6 +1000,29 @@ body {
   color: var(--danger);
 }
 
+.remove-from-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 8px;
+  border: 1.5px solid #e53935;
+  border-radius: 8px;
+  background: #fff;
+  color: #e53935;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.remove-from-cart-btn:hover {
+  background: #e53935;
+  color: #fff;
+}
+
 /* ══════════════════════════════════
    FOOTER
 ══════════════════════════════════ */
@@ -1033,4 +1056,44 @@ body {
 @media (max-width: 480px) {
   .product-grid, .featured-grid { grid-template-columns: 1fr; }
   .header-actions { flex-direction: column; width: 100%; }
+}
+/* ── Add these to your globals.css ── */
+
+.hero-category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero-category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.hero-category-pill:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.hero-category-pill:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }

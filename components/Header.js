@@ -1,105 +1,117 @@
-// 'use client'
-
-// import { useState } from 'react'
-// import Link from 'next/link'
-
-// const Header = ({ categories, activeCategory = 'All', onCategoryChange = () => {} }) => {
-//   return (
-//     <>
-//       <header className="header">
-//         <div className="container">
-//           <div className="header-top">
-//             <Link href="/" className="logo">
-//               My<span>Store</span>
-//             </Link>
-//             <div className="header-actions">
-//               <div className="search-bar">
-//                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-//                   <circle cx="11" cy="11" r="8"></circle>
-//                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-//                 </svg>
-//                 <input type="text" placeholder="Search products..." />
-//               </div>
-//               <button className="cart-btn">
-//                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-//                   <circle cx="9" cy="21" r="1"></circle>
-//                   <circle cx="20" cy="21" r="1"></circle>
-//                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-//                 </svg>
-//                 Cart
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//         <nav className="category-nav">
-//           <div className="container">
-//             <ul className="category-list">
-//               <li 
-//                 className={activeCategory === 'All' ? 'active' : ''}
-//                 onClick={() => onCategoryChange('All')}
-//                 style={{ cursor: 'pointer' }}
-//               >
-//                 All Products
-//               </li>
-//               {categories && categories.map((category) => (
-//                 <li 
-//                   key={category}
-//                   className={activeCategory === category ? 'active' : ''}
-//                   onClick={() => onCategoryChange(category)}
-//                   style={{ cursor: 'pointer' }}
-//                 >
-//                   {category}
-//                 </li>
-//               ))}
-//             </ul>
-//           </div>
-//         </nav>
-//       </header>
-//     </>
-//   )
-// }
-
-// export default Header
-
-
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { FaBolt, FaCar, FaMotorcycle, FaMobileAlt, FaLaptop, FaShoppingBag, FaChevronDown } from 'react-icons/fa'
+import { RiShoppingCartFill } from 'react-icons/ri'
+import { HiSearch } from 'react-icons/hi'
+import { IoClose } from 'react-icons/io5'
 
 const CATEGORY_GROUPS = [
   {
     group: 'Electronics',
-    icon: '⚡',
+    icon: <FaBolt size={18} />,
     categories: ['Phones', 'Laptops'],
   },
   {
     group: 'Vehicles',
-    icon: '🚘',
+    icon: <FaCar size={18} />,
     categories: ['Cars', 'Bikes'],
   },
 ]
 
 const categoryIcons = {
-  Cars: '🚗',
-  Bikes: '🏍️',
-  Phones: '📱',
-  Laptops: '💻',
+  Cars: <FaCar size={18} />,
+  Bikes: <FaMotorcycle size={18} />,
+  Phones: <FaMobileAlt size={18} />,
+  Laptops: <FaLaptop size={18} />,
 }
 
 const Header = ({
   categories = [],
   activeCategory = 'All',
   onCategoryChange = () => {},
-  cart = [],
   onRemoveFromCart = () => {},
+  onSearch = () => {},
+  searchQuery = '',
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [cartOpen, setCartOpen] = useState(false)
   const [openGroups, setOpenGroups] = useState({ Electronics: true, Vehicles: true })
+  const [imageErrors, setImageErrors] = useState({})
+  const [cart, setCart] = useState([])
+  const [mounted, setMounted] = useState(false)
+  const [localSearch, setLocalSearch] = useState(searchQuery)
+
+  useEffect(() => {
+    setMounted(true)
+    const loadCart = () => {
+      try {
+        const stored = JSON.parse(localStorage.getItem('cart') || '[]')
+        const normalized = stored.map(item => ({
+          ...item,
+          qty: item.qty ?? item.quantity ?? 1,
+        }))
+        setCart(normalized)
+      } catch {
+        setCart([])
+      }
+    }
+
+    loadCart()
+    window.addEventListener('cartUpdated', loadCart)
+    window.addEventListener('storage', loadCart)
+
+    return () => {
+      window.removeEventListener('cartUpdated', loadCart)
+      window.removeEventListener('storage', loadCart)
+    }
+  }, [])
+
+  useEffect(() => {
+    setLocalSearch(searchQuery)
+  }, [searchQuery])
+
+  const saveCart = (updatedCart) => {
+    localStorage.setItem('cart', JSON.stringify(updatedCart))
+    setCart(updatedCart)
+    window.dispatchEvent(new Event('cartUpdated'))
+  }
+
+  const handleIncrease = (itemId) => {
+    try {
+      const stored = JSON.parse(localStorage.getItem('cart') || '[]')
+      const updated = stored.map(item =>
+        item.id === itemId
+          ? { ...item, qty: (item.qty ?? item.quantity ?? 1) + 1 }
+          : item
+      )
+      saveCart(updated)
+    } catch (err) {
+      console.error('Failed to increase qty:', err)
+    }
+  }
+
+  const handleDecrease = (itemId) => {
+    try {
+      const stored = JSON.parse(localStorage.getItem('cart') || '[]')
+      const updated = stored
+        .map(item =>
+          item.id === itemId
+            ? { ...item, qty: (item.qty ?? item.quantity ?? 1) - 1 }
+            : item
+        )
+        .filter(item => item.qty > 0) // remove if qty hits 0
+      saveCart(updated)
+    } catch (err) {
+      console.error('Failed to decrease qty:', err)
+    }
+  }
 
   const handleCategoryClick = (category) => {
     onCategoryChange(category)
+    setLocalSearch('')
+    onSearch('')
     setSidebarOpen(false)
   }
 
@@ -107,7 +119,32 @@ const Header = ({
     setOpenGroups((prev) => ({ ...prev, [group]: !prev[group] }))
   }
 
-  const cartCount = cart.reduce((sum, item) => sum + item.qty, 0)
+  const handleImageError = (itemId) => {
+    setImageErrors(prev => ({ ...prev, [itemId]: true }))
+  }
+
+  const handleRemoveFromCart = (itemId) => {
+    try {
+      const stored = JSON.parse(localStorage.getItem('cart') || '[]')
+      const updated = stored.filter(item => item.id !== itemId)
+      saveCart(updated)
+      if (onRemoveFromCart) onRemoveFromCart(itemId)
+    } catch (err) {
+      console.error('Failed to remove from cart:', err)
+    }
+  }
+
+  const handleSearchKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      onSearch(localSearch.trim())
+    }
+  }
+
+  const handleSearchIconClick = () => {
+    onSearch(localSearch.trim())
+  }
+
+  const cartCount = mounted ? cart.reduce((sum, item) => sum + (item.qty ?? 1), 0) : 0
 
   const formatPrice = (price) =>
     new Intl.NumberFormat('en-IN', {
@@ -117,11 +154,10 @@ const Header = ({
       maximumFractionDigits: 0,
     }).format(price)
 
-  const cartTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0)
+  const cartTotal = cart.reduce((sum, item) => sum + item.price * (item.qty ?? 1), 0)
 
   return (
     <>
-      {/* Overlays */}
       {sidebarOpen && (
         <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
       )}
@@ -134,36 +170,28 @@ const Header = ({
         <div className="sidebar-header">
           <span className="sidebar-title">Categories</span>
           <button className="sidebar-close" onClick={() => setSidebarOpen(false)}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
+            <IoClose size={20} />
           </button>
         </div>
 
         <ul className="sidebar-list">
-          {/* All Products */}
           <li
             className={`sidebar-item all-products-item ${activeCategory === 'All' ? 'active' : ''}`}
             onClick={() => handleCategoryClick('All')}
           >
-            <span className="sidebar-item-icon">🛍️</span>
+            <span className="sidebar-item-icon"><FaShoppingBag size={18} /></span>
             All Products
           </li>
 
-          {/* Grouped dropdowns */}
           {CATEGORY_GROUPS.map(({ group, icon, categories: cats }) => (
             <li key={group} className="sidebar-group">
               <div className="sidebar-group-header" onClick={() => toggleGroup(group)}>
                 <span className="sidebar-group-icon">{icon}</span>
                 <span className="sidebar-group-label">{group}</span>
-                <svg
+                <FaChevronDown
                   className={`sidebar-chevron ${openGroups[group] ? 'rotated' : ''}`}
-                  width="14" height="14" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" strokeWidth="2.5"
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
+                  size={14}
+                />
               </div>
               {openGroups[group] && (
                 <ul className="sidebar-sub-list">
@@ -187,12 +215,11 @@ const Header = ({
       {/* ── Cart Drawer ── */}
       <aside className={`cart-drawer ${cartOpen ? 'cart-drawer-open' : ''}`}>
         <div className="cart-drawer-header">
-          <span className="cart-drawer-title">🛒 Your Cart</span>
+          <span className="cart-drawer-title">
+            <RiShoppingCartFill size={20} style={{ marginRight: '8px' }} /> Your Cart
+          </span>
           <button className="sidebar-close" onClick={() => setCartOpen(false)}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
+            <IoClose size={20} />
           </button>
         </div>
 
@@ -206,24 +233,95 @@ const Header = ({
             cart.map((item) => (
               <div key={item.id} className="cart-item">
                 <div className="cart-item-image">
-                  <img
-                    src={item.image}
-                    alt={item.itemname}
-                    onError={(e) => {
-                      e.target.style.display = 'none'
-                      e.target.parentElement.textContent = categoryIcons[item.category] || '📦'
-                    }}
-                  />
+                  {!imageErrors[item.id] && item.image ? (
+                    <img
+                      src={`/${item.image}`}
+                      alt={item.itemname}
+                      onError={() => handleImageError(item.id)}
+                    />
+                  ) : (
+                    <div className="cart-item-fallback">
+                      {categoryIcons[item.category] || <FaShoppingBag size={24} />}
+                    </div>
+                  )}
                 </div>
+
                 <div className="cart-item-info">
                   <p className="cart-item-name">{item.itemname}</p>
                   <p className="cart-item-category">{item.category}</p>
                   <p className="cart-item-price">{formatPrice(item.price)}</p>
-                  <p className="cart-item-qty">Qty: {item.qty}</p>
+
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    marginTop: '6px',
+                  }}>
+                    {/* ── Minus ── */}
+                    <button
+                      onClick={() => handleDecrease(item.id)}
+                      style={{
+                        width: '26px',
+                        height: '26px',
+                        borderRadius: '6px',
+                        border: '1.5px solid #ccc',
+                        background: '#fff',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        color: '#555',
+                        lineHeight: 1,
+                        flexShrink: 0,
+                      }}
+                      title={item.qty === 1 ? 'Remove item' : 'Decrease quantity'}
+                    >
+                      −
+                    </button>
+
+                    {/* ── Count ── */}
+                    <span style={{
+                      minWidth: '20px',
+                      textAlign: 'center',
+                      fontSize: '14px',
+                      fontWeight: '600',
+                      color: '#333',
+                    }}>
+                      {item.qty ?? 1}
+                    </span>
+
+                    {/* ── Plus ── */}
+                    <button
+                      onClick={() => handleIncrease(item.id)}
+                      style={{
+                        width: '26px',
+                        height: '26px',
+                        borderRadius: '6px',
+                        border: '1.5px solid #ccc',
+                        background: '#fff',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        color: '#555',
+                        lineHeight: 1,
+                        flexShrink: 0,
+                      }}
+                      title="Increase quantity"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
+
+                {/* ── Remove ── */}
                 <button
                   className="cart-item-remove"
-                  onClick={() => onRemoveFromCart(item.id)}
+                  onClick={() => handleRemoveFromCart(item.id)}
                   title="Remove"
                 >✕</button>
               </div>
@@ -253,25 +351,40 @@ const Header = ({
                 <span></span>
               </button>
               <Link href="/" className="logo">
-                MUlti<span>  Category Catalog</span>
+                Multi<span> Category Catalog</span>
               </Link>
             </div>
             <div className="header-actions">
               <div className="search-bar">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="11" cy="11" r="8" />
-                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
-                <input type="text" placeholder="Search products..." />
+                <HiSearch
+                  size={16}
+                  onClick={handleSearchIconClick}
+                  style={{ cursor: 'pointer' }}
+                />
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  value={localSearch}
+                  onChange={(e) => setLocalSearch(e.target.value)}
+                  onKeyDown={handleSearchKeyDown}
+                />
+                {localSearch && (
+                  <IoClose
+                    size={16}
+                    style={{ cursor: 'pointer', color: '#999' }}
+                    onClick={() => {
+                      setLocalSearch('')
+                      onSearch('')
+                    }}
+                  />
+                )}
               </div>
               <button className="cart-btn" onClick={() => setCartOpen(true)}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="9" cy="21" r="1" />
-                  <circle cx="20" cy="21" r="1" />
-                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                </svg>
+                <RiShoppingCartFill size={20} />
                 Cart
-                {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+                {mounted && cartCount > 0 && (
+                  <span className="cart-badge">{cartCount}</span>
+                )}
               </button>
             </div>
           </div>

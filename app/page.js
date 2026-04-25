@@ -10,14 +10,12 @@ import ProductGrid from '../components/ProductGrid'
 import Footer from '../components/Footer'
 import productsData from '../data/products.json'
 
-
 export default function Home() {
   const searchParams = useSearchParams()
   const [activeCategory, setActiveCategory] = useState('All')
-  const [cart, setCart] = useState([])
+  const [searchQuery, setSearchQuery] = useState('')  
   const categories = productsData.categories
 
-  // Check for category in URL params
   useEffect(() => {
     const categoryParam = searchParams?.get('category')
     if (categoryParam && categories.includes(categoryParam)) {
@@ -25,45 +23,63 @@ export default function Home() {
     }
   }, [searchParams, categories])
 
-  const filteredProducts = activeCategory === 'All' 
-    ? productsData.products 
-    : productsData.products.filter(p => p.category === activeCategory)
+ 
+  const filteredProducts = productsData.products.filter(p => {
+    const matchesCategory = activeCategory === 'All' || p.category === activeCategory
+    const matchesSearch = searchQuery === '' || 
+      p.itemname.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.category.toLowerCase().includes(searchQuery.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
 
-  // Add to cart handler
+ 
+  const isSearching = searchQuery.trim() !== ''
+
   const handleAddToCart = (product) => {
-    setCart(prev => {
-      const existing = prev.find(item => item.id === product.id)
-      if (existing) {
-        return prev.map(item =>
-          item.id === product.id ? { ...item, qty: item.qty + 1 } : item
-        )
-      }
-      return [...prev, { ...product, qty: 1 }]
-    })
+    // cart is managed inside Header via localStorage — nothing needed here
   }
 
-  // Remove from cart handler
   const handleRemoveFromCart = (productId) => {
-    setCart(prev => prev.filter(item => item.id !== productId))
+    // cart is managed inside Header via localStorage — nothing needed here
+  }
+
+  
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category)
+    setSearchQuery('')
   }
 
   return (
     <>
-      <Header 
-        categories={categories} 
+      <Header
+        categories={categories}
         activeCategory={activeCategory}
-        onCategoryChange={setActiveCategory}
-        cart={cart}
+        onCategoryChange={handleCategoryChange}
         onRemoveFromCart={handleRemoveFromCart}
+        onSearch={setSearchQuery}       
+        searchQuery={searchQuery}       
       />
       <main className="container">
         <HeroSection />
 
-        {/* Back to All Products button — shown when a category is selected */}
-        {activeCategory !== 'All' && (
+        {isSearching && (
+          <div style={{ margin: '24px 0 8px' }}>
+            <h2 style={{ fontSize: '20px', color: '#333' }}>
+              {filteredProducts.length > 0
+                ? `${filteredProducts.length} result${filteredProducts.length !== 1 ? 's' : ''} for "${searchQuery}"`
+                : `No results found for "${searchQuery}"`}
+            </h2>
+          </div>
+        )}
+
+        {(activeCategory !== 'All' || isSearching) && (
           <button
             className="back-to-all-btn"
-            onClick={() => setActiveCategory('All')}
+            onClick={() => {
+              setActiveCategory('All')
+              setSearchQuery('')
+            }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="15 18 9 12 15 6" />
@@ -71,21 +87,27 @@ export default function Home() {
             Back to All Products
           </button>
         )}
-        
-        {activeCategory === 'All' ? (
+
+        {isSearching ? (
+          <ProductGrid
+            products={filteredProducts}
+            title=""
+            onAddToCart={handleAddToCart}
+          />
+        ) : activeCategory === 'All' ? (
           <>
             <FeaturedSection products={productsData.products} onAddToCart={handleAddToCart} />
             <WelcomeSection />
           </>
         ) : (
-          <ProductGrid 
-            products={filteredProducts} 
+          <ProductGrid
+            products={filteredProducts}
             title={`${activeCategory} Products`}
             onAddToCart={handleAddToCart}
           />
         )}
-        
-        {activeCategory !== 'All' && filteredProducts.length > 4 && (
+
+        {!isSearching && activeCategory !== 'All' && filteredProducts.length > 4 && (
           <a href="#" className="view-all">View All {activeCategory}</a>
         )}
       </main>
