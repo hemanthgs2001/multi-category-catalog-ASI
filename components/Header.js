@@ -27,6 +27,20 @@ const categoryIcons = {
   Laptops: <FaLaptop size={18} />,
 }
 
+// Helper function to check if a string is a valid external URL
+const isExternalUrl = (url) => {
+  return url && (url.startsWith('http://') || url.startsWith('https://'))
+}
+
+// Helper function to get the correct image source
+const getImageSrc = (image) => {
+  if (!image) return null
+  if (isExternalUrl(image)) {
+    return image
+  }
+  return `/${image}`
+}
+
 const Header = ({
   categories = [],
   activeCategory = 'All',
@@ -230,102 +244,105 @@ const Header = ({
               <p>Your cart is empty</p>
             </div>
           ) : (
-            cart.map((item) => (
-              <div key={item.id} className="cart-item">
-                <div className="cart-item-image">
-                  {!imageErrors[item.id] && item.image ? (
-                    <img
-                      src={`/${item.image}`}
-                      alt={item.itemname}
-                      onError={() => handleImageError(item.id)}
-                    />
-                  ) : (
-                    <div className="cart-item-fallback">
-                      {categoryIcons[item.category] || <FaShoppingBag size={24} />}
-                    </div>
-                  )}
-                </div>
-
-                <div className="cart-item-info">
-                  <p className="cart-item-name">{item.itemname}</p>
-                  <p className="cart-item-category">{item.category}</p>
-                  <p className="cart-item-price">{formatPrice(item.price)}</p>
-
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    marginTop: '6px',
-                  }}>
-                    {/* ── Minus ── */}
-                    <button
-                      onClick={() => handleDecrease(item.id)}
-                      style={{
-                        width: '26px',
-                        height: '26px',
-                        borderRadius: '6px',
-                        border: '1.5px solid #ccc',
-                        background: '#fff',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '16px',
-                        fontWeight: 'bold',
-                        color: '#555',
-                        lineHeight: 1,
-                        flexShrink: 0,
-                      }}
-                      title={item.qty === 1 ? 'Remove item' : 'Decrease quantity'}
-                    >
-                      −
-                    </button>
-
-                    {/* ── Count ── */}
-                    <span style={{
-                      minWidth: '20px',
-                      textAlign: 'center',
-                      fontSize: '14px',
-                      fontWeight: '600',
-                      color: '#333',
-                    }}>
-                      {item.qty ?? 1}
-                    </span>
-
-                    {/* ── Plus ── */}
-                    <button
-                      onClick={() => handleIncrease(item.id)}
-                      style={{
-                        width: '26px',
-                        height: '26px',
-                        borderRadius: '6px',
-                        border: '1.5px solid #ccc',
-                        background: '#fff',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '16px',
-                        fontWeight: 'bold',
-                        color: '#555',
-                        lineHeight: 1,
-                        flexShrink: 0,
-                      }}
-                      title="Increase quantity"
-                    >
-                      +
-                    </button>
+            cart.map((item) => {
+              const imageSrc = getImageSrc(item.image)
+              return (
+                <div key={item.id} className="cart-item">
+                  <div className="cart-item-image">
+                    {!imageErrors[item.id] && imageSrc ? (
+                      <img
+                        src={imageSrc}
+                        alt={item.itemname}
+                        onError={() => handleImageError(item.id)}
+                      />
+                    ) : (
+                      <div className="cart-item-fallback">
+                        {categoryIcons[item.category] || <FaShoppingBag size={24} />}
+                      </div>
+                    )}
                   </div>
-                </div>
 
-                {/* ── Remove ── */}
-                <button
-                  className="cart-item-remove"
-                  onClick={() => handleRemoveFromCart(item.id)}
-                  title="Remove"
-                >✕</button>
-              </div>
-            ))
+                  <div className="cart-item-info">
+                    <p className="cart-item-name">{item.itemname}</p>
+                    <p className="cart-item-category">{item.category}</p>
+                    <p className="cart-item-price">{formatPrice(item.price)}</p>
+
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      marginTop: '6px',
+                    }}>
+                      {/* ── Minus ── */}
+                      <button
+                        onClick={() => handleDecrease(item.id)}
+                        style={{
+                          width: '26px',
+                          height: '26px',
+                          borderRadius: '6px',
+                          border: '1.5px solid #ccc',
+                          background: '#fff',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '16px',
+                          fontWeight: 'bold',
+                          color: '#555',
+                          lineHeight: 1,
+                          flexShrink: 0,
+                        }}
+                        title={item.qty === 1 ? 'Remove item' : 'Decrease quantity'}
+                      >
+                        −
+                      </button>
+
+                      {/* ── Count ── */}
+                      <span style={{
+                        minWidth: '20px',
+                        textAlign: 'center',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        color: '#333',
+                      }}>
+                        {item.qty ?? 1}
+                      </span>
+
+                      {/* ── Plus ── */}
+                      <button
+                        onClick={() => handleIncrease(item.id)}
+                        style={{
+                          width: '26px',
+                          height: '26px',
+                          borderRadius: '6px',
+                          border: '1.5px solid #ccc',
+                          background: '#fff',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '16px',
+                          fontWeight: 'bold',
+                          color: '#555',
+                          lineHeight: 1,
+                          flexShrink: 0,
+                        }}
+                        title="Increase quantity"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* ── Remove ── */}
+                  <button
+                    className="cart-item-remove"
+                    onClick={() => handleRemoveFromCart(item.id)}
+                    title="Remove"
+                  >✕</button>
+                </div>
+              )
+            })
           )}
         </div>
 

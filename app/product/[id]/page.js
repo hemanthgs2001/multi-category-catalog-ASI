@@ -32,12 +32,12 @@ const StarRating = ({ rating, totalReviews, size = 'medium' }) => {
       stars.push(
         <svg key={i} width={starSize} height={starSize} viewBox="0 0 24 24">
           <defs>
-            <linearGradient id={`halfGrad-${size}`}>
+            <linearGradient id={`halfGrad-${size}-${rating}`}>
               <stop offset="50%" stopColor="#FFD700"/>
               <stop offset="50%" stopColor="#DDD"/>
             </linearGradient>
           </defs>
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill={`url(#halfGrad-${size})`}/>
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill={`url(#halfGrad-${size}-${rating})`}/>
         </svg>
       )
     } else {
@@ -57,6 +57,11 @@ const StarRating = ({ rating, totalReviews, size = 'medium' }) => {
       </span>
     </div>
   )
+}
+
+// Helper function to check if a string is a valid URL
+const isExternalUrl = (url) => {
+  return url && (url.startsWith('http://') || url.startsWith('https://'))
 }
 
 export default function ProductDetailPage() {
@@ -150,6 +155,15 @@ export default function ProductDetailPage() {
     }
   }
 
+  // Get the correct image source
+  const getImageSrc = () => {
+    if (!product?.image) return null
+    if (isExternalUrl(product.image)) {
+      return product.image
+    }
+    return `/${product.image}`
+  }
+
   if (!product) {
     return (
       <>
@@ -172,6 +186,8 @@ export default function ProductDetailPage() {
     )
   }
 
+  const imageSrc = getImageSrc()
+
   return (
     <>
       <Header
@@ -190,9 +206,9 @@ export default function ProductDetailPage() {
 
         <div className="detail-card">
           <div className="detail-image-container" style={{ position: 'relative' }}>
-            {!imageError ? (
+            {!imageError && imageSrc ? (
               <img
-                src={`/${product.image}`}
+                src={imageSrc}
                 alt={product.itemname}
                 className="detail-image"
                 onError={() => setImageError(true)}
@@ -252,7 +268,7 @@ export default function ProductDetailPage() {
 
             <p className="detail-description">{product.description}</p>
 
-            {/* ✅ Add to Cart button */}
+            {/* Add to Cart button */}
             <button
               className="add-to-cart-btn"
               onClick={handleAddToCart}
@@ -267,7 +283,7 @@ export default function ProductDetailPage() {
               {mounted && isAddedToCart ? 'Added to Cart' : 'Add to Cart'}
             </button>
 
-            {/* ✅ Remove from Cart button — only visible after item is added */}
+            {/* Remove from Cart button — only visible after item is added */}
             {mounted && isAddedToCart && (
               <button
                 className="remove-from-cart-btn"
