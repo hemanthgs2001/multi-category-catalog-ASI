@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'MyStore - Best Products, Best Prices',
+  title: 'Multi Category Catalog - Best Products, Best Prices',
   description: 'Your one-stop shop for cars, bikes, phones, and laptops',
 }
 

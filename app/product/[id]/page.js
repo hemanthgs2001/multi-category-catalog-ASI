@@ -1,6 +1,6 @@
 'use client'
 
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import productsData from '../../../data/products.json'
 import Header from '../../../components/Header'
@@ -53,7 +53,7 @@ const StarRating = ({ rating, totalReviews, size = 'medium' }) => {
         {stars}
       </div>
       <span style={{ fontSize: size === 'large' ? '16px' : '14px', color: '#666' }}>
-        {rating} out of 5 ({totalReviews} reviews)
+        {rating} out of 5 {totalReviews > 0 ? `(${totalReviews} reviews)` : ''}
       </span>
     </div>
   )
@@ -61,6 +61,7 @@ const StarRating = ({ rating, totalReviews, size = 'medium' }) => {
 
 export default function ProductDetailPage() {
   const params = useParams()
+  const router = useRouter()
   const product = productsData.products.find(p => p.id === params.id)
 
   const formatPrice = (price) => {
@@ -76,10 +77,23 @@ export default function ProductDetailPage() {
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0
 
+  // Handler for category changes - redirects to home page with category filter
+  const handleCategoryChange = (category) => {
+    if (category === 'All') {
+      router.push('/')
+    } else {
+      router.push(`/?category=${category}`)
+    }
+  }
+
   if (!product) {
     return (
       <>
-        <Header categories={productsData.categories} />
+        <Header 
+          categories={productsData.categories} 
+          activeCategory="All"
+          onCategoryChange={handleCategoryChange}
+        />
         <main className="container">
           <div className="error">
             <h2>Product Not Found</h2>
@@ -96,7 +110,11 @@ export default function ProductDetailPage() {
 
   return (
     <>
-      <Header categories={productsData.categories} />
+      <Header 
+        categories={productsData.categories} 
+        activeCategory={product.category}
+        onCategoryChange={handleCategoryChange}
+      />
       <main className="detail-container">
         <Link href="/" className="back-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -107,14 +125,15 @@ export default function ProductDetailPage() {
         </Link>
 
         <div className="detail-card">
-          <div className="detail-image-container">
+          <div className="detail-image-container" style={{ position: 'relative' }}>
             <img 
-              src={product.image} 
+              src={`/${product.image}`}
               alt={product.itemname}
               className="detail-image"
               onError={(e) => {
                 e.target.style.display = 'none'
                 e.target.parentElement.textContent = categoryIcons[product.category] || '📦'
+                e.target.parentElement.style.fontSize = '120px'
               }}
             />
             {discount > 0 && (

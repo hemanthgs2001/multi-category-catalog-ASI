@@ -54,7 +54,7 @@ const StarRating = ({ rating, totalReviews }) => {
   )
 }
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onAddToCart }) => {
   const formatPrice = (price) => {
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',
@@ -67,6 +67,12 @@ const ProductCard = ({ product }) => {
   const discount = product.originalPrice 
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0
+
+  const handleAddToCart = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    if (onAddToCart) onAddToCart(product)
+  }
 
   return (
     <Link href={`/product/${product.id}`} className="product-card">
@@ -81,17 +87,7 @@ const ProductCard = ({ product }) => {
           }}
         />
         {discount > 0 && (
-          <span style={{
-            position: 'absolute',
-            top: '10px',
-            right: '10px',
-            background: '#e53935',
-            color: 'white',
-            padding: '4px 8px',
-            borderRadius: '4px',
-            fontSize: '12px',
-            fontWeight: 'bold'
-          }}>
+          <span className="discount-badge">
             {discount}% OFF
           </span>
         )}
@@ -115,6 +111,15 @@ const ProductCard = ({ product }) => {
             </span>
           )}
         </div>
+
+        <button className="add-to-cart-btn" onClick={handleAddToCart}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          Add to Cart
+        </button>
       </div>
     </Link>
   )

@@ -1,6 +1,6 @@
 import ProductCard from './ProductCard'
 
-const FeaturedSection = ({ products }) => {
+const FeaturedSection = ({ products, onAddToCart }) => {
   // Get featured products grouped by category
   const featuredByCategory = {}
   
@@ -21,7 +21,7 @@ const FeaturedSection = ({ products }) => {
           <h3 className="category-section-title">{category}</h3>
           <div className="featured-grid">
             {items.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
             ))}
           </div>
         </div>
