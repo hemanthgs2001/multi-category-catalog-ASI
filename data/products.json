@@ -13,7 +13,7 @@
       "price": 731900,
       "originalPrice": 850000,
       "currency": "INR",
-      "description": "Stylish sedan with advanced safety features and comfort.",
+      "description": "Stylish compact SUV with advanced safety features and comfort.",
       "image": "https://stimg.cardekho.com/images/car-images/930x620/Kia/Sonet/9783/1705386619542/222_Pewter-Olive_33382d.jpg",
       "featured": true,
       "rating": 4.5,
@@ -21,12 +21,12 @@
       "reviews": [
         { "user": "Rahul S.", "rating": 5, "comment": "Excellent comfort and driving experience!" },
         { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for its class." },
-        { "user": "Amit K.", "rating": 5, "comment": "Best sedan in this price range." }
+        { "user": "Amit K.", "rating": 5, "comment": "Best compact SUV in this price range." }
       ],
       "itemprops": [
         { "key": "Color", "value": "Pewter Olive" },
-        { "key": "Engine", "value": "1.2L Kappa" },
-        { "key": "RPM", "value": "6000" },
+        { "key": "Engine", "value": "1.2L Kappa Petrol" },
+        { "key": "RPM", "value": "6000 rpm" },
         { "key": "Capacity", "value": "5 Seater" }
       ]
     },
@@ -37,7 +37,7 @@
       "price": 103990,
       "originalPrice": 119900,
       "currency": "INR",
-      "description": "A16 Bionic chip, amazing camera, all-day battery.",
+      "description": "A18 Pro chip, amazing camera system, all-day battery life.",
       "image": "https://images.unsplash.com/photo-1726732970014-f2df88c87dd3?q=80&w=1032&auto=format&fit=crop",
       "featured": true,
       "rating": 4.7,
@@ -48,6 +48,8 @@
         { "user": "Divya P.", "rating": 4, "comment": "Excellent phone but price is high." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Desert Titanium" },
+        { "key": "Chip", "value": "A18 Pro" },
         { "key": "Lens Type", "value": "Tetraprism Telephoto" },
         { "key": "Screen Size", "value": "6.3-inch" },
         { "key": "Battery", "value": "3577 mAh" }
@@ -60,17 +62,21 @@
       "price": 7000000,
       "originalPrice": 8000000,
       "currency": "INR",
-      "description": "Stylish sedan with advanced safety features and comfort.",
+      "description": "Sleek electric sedan with advanced autopilot and long range.",
       "image": "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Model-3-Main-Hero-Desktop-LHD.jpg",
       "featured": true,
       "rating": 4.5,
       "totalReviews": 234,
       "reviews": [
         { "user": "Rahul S.", "rating": 5, "comment": "Excellent comfort and driving experience!" },
-        { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for its class." },
-        { "user": "Amit K.", "rating": 5, "comment": "Best sedan in this price range." }
+        { "user": "Priya M.", "rating": 4, "comment": "Smooth and silent electric ride." },
+        { "user": "Amit K.", "rating": 5, "comment": "Best EV sedan in this segment." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Pearl White" },
+        { "key": "Engine", "value": "Dual Motor Electric" },
+        { "key": "RPM", "value": "18000 rpm" },
+        { "key": "Capacity", "value": "5 Seater" },
         { "key": "Range", "value": "341 miles" },
         { "key": "0-60 mph", "value": "5.8s" },
         { "key": "Top Speed", "value": "125 mph" }
@@ -83,20 +89,22 @@
       "price": 169900,
       "originalPrice": 199900,
       "currency": "INR",
-      "description": "Powerful M2 chip, sleek design, all-day battery.",
+      "description": "Powerful M3 chip, Liquid Retina XDR display, all-day battery.",
       "image": "https://images.unsplash.com/photo-1724859234679-964acf07b126?q=80&w=870&auto=format&fit=crop",
       "featured": true,
       "rating": 4.8,
       "totalReviews": 765,
       "reviews": [
-        { "user": "Priyanka D.", "rating": 5, "comment": "M2 chip is incredibly fast! Love it." },
+        { "user": "Priyanka D.", "rating": 5, "comment": "M3 chip is incredibly fast! Love it." },
         { "user": "Suresh N.", "rating": 5, "comment": "Sleek design and amazing battery life." },
         { "user": "Mehak K.", "rating": 4, "comment": "Perfect for work and travel." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Space Black" },
         { "key": "Processor", "value": "Apple M3 Max" },
-        { "key": "RAM", "value": "36GB" },
-        { "key": "Display", "value": "Liquid Retina XDR" }
+        { "key": "RAM", "value": "36GB Unified" },
+        { "key": "Display", "value": "Liquid Retina XDR" },
+        { "key": "Storage", "value": "1TB SSD" }
       ]
     },
     {
@@ -106,19 +114,22 @@
       "price": 2999000,
       "originalPrice": 3650000,
       "currency": "INR",
-      "description": "Classic design with powerful engine and comfort.",
+      "description": "Flagship superbike with MotoGP-derived engine and aerodynamics.",
       "image": "https://images.ctfassets.net/x7j9qwvpvr5s/43adRuY33iuCayAyMy3wTw/5545b174f876fc95ffcfff3d643c4d23/Ducati-MY25-Panigale-V4-overview-carousel-hero-link-1600x650-01.jpg",
       "featured": true,
       "rating": 4.4,
       "totalReviews": 567,
       "reviews": [
         { "user": "Deepak S.", "rating": 5, "comment": "Timeless classic! Loving every ride." },
-        { "user": "Ravi K.", "rating": 4, "comment": "Great thump and comfortable rides." },
-        { "user": "Anita J.", "rating": 4, "comment": "Perfect for long highway rides." }
+        { "user": "Ravi K.", "rating": 4, "comment": "Incredible track machine." },
+        { "user": "Anita J.", "rating": 4, "comment": "Perfect for track days." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Ducati Red" },
+        { "key": "Engine", "value": "1103cc Desmosedici V4" },
+        { "key": "RPM", "value": "13500 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
         { "key": "Type", "value": "Superbike" },
-        { "key": "Displacement", "value": "1,103 cc" },
         { "key": "Max Power", "value": "214 hp" }
       ]
     },
@@ -129,7 +140,7 @@
       "price": 71999,
       "originalPrice": 129999,
       "currency": "INR",
-      "description": "Powerful Android phone with stunning display.",
+      "description": "Powerful Android flagship with 200MP camera and S-Pen.",
       "image": "https://images.samsung.com/in/smartphones/galaxy-s24-ultra/images/galaxy-s24-ultra-highlights-color-carousel-exclusive.jpg",
       "featured": true,
       "rating": 4.5,
@@ -140,7 +151,10 @@
         { "user": "Abhishek D.", "rating": 4, "comment": "Best Android flagship at this price." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Titanium Gray" },
+        { "key": "Chip", "value": "Snapdragon 8 Gen 3" },
         { "key": "Zoom", "value": "100x Space Zoom" },
+        { "key": "Screen Size", "value": "6.8-inch" },
         { "key": "Stylus", "value": "S-Pen Included" }
       ]
     },
@@ -151,18 +165,21 @@
       "price": 305723,
       "originalPrice": 337036,
       "currency": "INR",
-      "description": "Powerful performance with aggressive styling.",
+      "description": "Adventure tourer built for highways, hills, and rough terrain.",
       "image": "https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/himalayan-450/gma/gma-himalayan.webp",
       "featured": false,
       "rating": 4.7,
       "totalReviews": 389,
       "reviews": [
-        { "user": "Rohit M.", "rating": 5, "comment": "Beast on the streets! Incredible power." },
-        { "user": "Pooja K.", "rating": 4, "comment": "Aggressive styling, turns heads everywhere." },
-        { "user": "Sanjay V.", "rating": 5, "comment": "Best naked sports bike in segment." }
+        { "user": "Rohit M.", "rating": 5, "comment": "Best adventure bike in this segment!" },
+        { "user": "Pooja K.", "rating": 4, "comment": "Handles rough terrain effortlessly." },
+        { "user": "Sanjay V.", "rating": 5, "comment": "Perfect touring companion." }
       ],
       "itemprops": [
-        { "key": "Engine", "value": "Sherpa 450" },
+        { "key": "Color", "value": "Slate Himalayan Salt" },
+        { "key": "Engine", "value": "451cc Sherpa Liquid-Cooled" },
+        { "key": "RPM", "value": "8000 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
         { "key": "Weight", "value": "196 kg" }
       ]
     },
@@ -173,17 +190,20 @@
       "price": 189990,
       "originalPrice": 258990,
       "currency": "INR",
-      "description": "Compact laptop with powerful performance and infinity display.",
+      "description": "Premium creator laptop with InfinityEdge display and RTX graphics.",
       "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9530/media-gallery/touch-black/notebook-xps-15-9530-t-black-gallery-4.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=677&qlt=100,1&resMode=sharp2&size=677,402&chrss=full",
       "featured": true,
       "rating": 4.5,
       "totalReviews": 432,
       "reviews": [
-        { "user": "Harish T.", "rating": 5, "comment": "Infinity display is stunning!" },
+        { "user": "Harish T.", "rating": 5, "comment": "InfinityEdge display is stunning!" },
         { "user": "Nalini S.", "rating": 4, "comment": "Compact and powerful. Great for professionals." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Platinum Silver" },
+        { "key": "Processor", "value": "Intel Core i7-13700H" },
         { "key": "GPU", "value": "RTX 4050" },
+        { "key": "RAM", "value": "16GB DDR5" },
         { "key": "Chassis", "value": "CNC Aluminum" }
       ]
     },
@@ -194,7 +214,7 @@
       "price": 2902000,
       "originalPrice": 3594000,
       "currency": "INR",
-      "description": "Stylish sedan with advanced safety features and comfort.",
+      "description": "Premium mid-size SUV with ADAS and panoramic sunroof.",
       "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Tucson/10133/1762431617294/front-left-side-47.jpg",
       "featured": true,
       "rating": 4.5,
@@ -202,9 +222,13 @@
       "reviews": [
         { "user": "Rahul S.", "rating": 5, "comment": "Excellent comfort and driving experience!" },
         { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for its class." },
-        { "user": "Amit K.", "rating": 5, "comment": "Best sedan in this price range." }
+        { "user": "Amit K.", "rating": 5, "comment": "Best mid-size SUV in this price range." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Shimmering Silver" },
+        { "key": "Engine", "value": "2.0L Turbo Diesel" },
+        { "key": "RPM", "value": "4000 rpm" },
+        { "key": "Capacity", "value": "5 Seater" },
         { "key": "AWD", "value": "Yes" }
       ]
     },
@@ -215,18 +239,21 @@
       "price": 79999,
       "originalPrice": 93999,
       "currency": "INR",
-      "description": "Powerful Android phone with stunning display.",
+      "description": "Google's flagship AI phone with Tensor G4 and exceptional camera.",
       "image": "https://images.unsplash.com/photo-1727132528094-117c9dceb047?q=80&w=1031&auto=format&fit=crop",
       "featured": true,
       "rating": 4.5,
       "totalReviews": 876,
       "reviews": [
-        { "user": "Vivek M.", "rating": 5, "comment": "Display is absolutely gorgeous!" },
+        { "user": "Vivek M.", "rating": 5, "comment": "Best Android camera experience!" },
         { "user": "Kavita S.", "rating": 4, "comment": "Great camera and smooth performance." },
-        { "user": "Abhishek D.", "rating": 4, "comment": "Best Android flagship at this price." }
+        { "user": "Abhishek D.", "rating": 4, "comment": "Clean software and fast updates." }
       ],
       "itemprops": [
-        { "key": "Chip", "value": "Tensor G4" }
+        { "key": "Color", "value": "Obsidian" },
+        { "key": "Chip", "value": "Tensor G4" },
+        { "key": "Screen Size", "value": "6.3-inch OLED" },
+        { "key": "Battery", "value": "4700 mAh" }
       ]
     },
     {
@@ -236,17 +263,21 @@
       "price": 3499000,
       "originalPrice": 3800000,
       "currency": "INR",
-      "description": "Powerful performance with aggressive styling.",
+      "description": "Supercharged hypersport motorcycle with extreme performance.",
       "image": "https://cdn.bikedekho.com/processedimages/kawasaki/kawasaki-ninja-h2/source/kawasaki-ninja-h261a5ba444bbd9.jpg",
       "featured": false,
       "rating": 4.7,
       "totalReviews": 389,
       "reviews": [
-        { "user": "Rohit M.", "rating": 5, "comment": "Beast on the streets! Incredible power." },
-        { "user": "Pooja K.", "rating": 4, "comment": "Aggressive styling, turns heads everywhere." },
-        { "user": "Sanjay V.", "rating": 5, "comment": "Best naked sports bike in segment." }
+        { "user": "Rohit M.", "rating": 5, "comment": "The supercharger whine is addictive!" },
+        { "user": "Pooja K.", "rating": 4, "comment": "Insane acceleration, turns heads everywhere." },
+        { "user": "Sanjay V.", "rating": 5, "comment": "The fastest street-legal bike I've ridden." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Mirror Coated Matte Carbon" },
+        { "key": "Engine", "value": "998cc Supercharged Inline-4" },
+        { "key": "RPM", "value": "11000 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
         { "key": "Supercharged", "value": "Yes" }
       ]
     },
@@ -257,17 +288,21 @@
       "price": 134990,
       "originalPrice": 154990,
       "currency": "INR",
-      "description": "2-in-1 laptop with touchscreen and long battery life.",
+      "description": "Ultra-slim gaming laptop with OLED display and AMD Ryzen.",
       "image": "https://www.amd.com/content/dam/amd/en/images/products/laptops/2201103-amd-advantage-laptop-rog-zephyrus-g14-video-thumbnail.png",
       "featured": true,
       "rating": 4.6,
       "totalReviews": 321,
       "reviews": [
-        { "user": "Deepak M.", "rating": 5, "comment": "Versatile 2-in-1 with brilliant display." },
-        { "user": "Ritu K.", "rating": 4, "comment": "Perfect for creative professionals." }
+        { "user": "Deepak M.", "rating": 5, "comment": "Thin gaming laptop with brilliant display." },
+        { "user": "Ritu K.", "rating": 4, "comment": "Perfect for creative professionals and gamers." }
       ],
       "itemprops": [
-        { "key": "Screen", "value": "OLED" }
+        { "key": "Color", "value": "Moonlight White" },
+        { "key": "Processor", "value": "AMD Ryzen 9" },
+        { "key": "GPU", "value": "RTX 4070" },
+        { "key": "RAM", "value": "16GB DDR5" },
+        { "key": "Screen", "value": "14-inch OLED 144Hz" }
       ]
     },
     {
@@ -277,7 +312,7 @@
       "price": 5000000,
       "originalPrice": 5500000,
       "currency": "INR",
-      "description": "Stylish sedan with advanced safety features and comfort.",
+      "description": "Sporty premium sedan with refined turbocharged engine.",
       "image": "https://images10.gaadi.com/usedcar_image/5247609/original/processed_50a4a83c-3124-4bde-982c-ab0888306cfb.jpg?imwidth=930",
       "featured": true,
       "rating": 4.5,
@@ -285,9 +320,13 @@
       "reviews": [
         { "user": "Rahul S.", "rating": 5, "comment": "Excellent comfort and driving experience!" },
         { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for its class." },
-        { "user": "Amit K.", "rating": 5, "comment": "Best sedan in this price range." }
+        { "user": "Amit K.", "rating": 5, "comment": "Best-looking sedan in this segment." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Sonic Grey Pearl" },
+        { "key": "Engine", "value": "1.5L VTEC Turbo" },
+        { "key": "RPM", "value": "6000 rpm" },
+        { "key": "Capacity", "value": "5 Seater" },
         { "key": "Hybrid", "value": "Available" }
       ]
     },
@@ -298,7 +337,7 @@
       "price": 50939,
       "originalPrice": 64999,
       "currency": "INR",
-      "description": "Fast performance, 100W charging, smooth experience.",
+      "description": "Flagship killer with 100W charging and Hasselblad cameras.",
       "image": "https://imgs.search.brave.com/J2oKrlKjJ-nIFwv-DvHWsskgA1vun-Qe21pKTBrUYcg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y25ldC5jb20vYS9p/bWcvcmVzaXplL2Nm/ZGY2N2FiOTQyMWM3/ZjdmYjc5ZDQwMDBj/MzhjZGRjMjdkYjNm/OWUvaHViLzIwMjQv/MDEvMjIvYTc2ZmUy/OGEtNjgyNC00MzI5/LTg3NjUtNjYyMDVm/YmJjNTIyL29uZXBs/dXMtMTItMTJyLWNu/ZXQtbGFueG9uLXJl/dmlldy0xMS5qcGc_/YXV0bz13ZWJwJmZp/dD1jcm9wJmhlaWdo/dD0zNjImd2lkdGg9/NjQ0",
       "featured": true,
       "rating": 4.4,
@@ -309,7 +348,11 @@
         { "user": "Shweta P.", "rating": 4, "comment": "Excellent phone for the price." }
       ],
       "itemprops": [
-        { "key": "Charge", "value": "100W" }
+        { "key": "Color", "value": "Silky Black" },
+        { "key": "Chip", "value": "Snapdragon 8 Gen 3" },
+        { "key": "Screen Size", "value": "6.82-inch LTPO AMOLED" },
+        { "key": "Battery", "value": "5400 mAh" },
+        { "key": "Charge", "value": "100W SuperVOOC" }
       ]
     },
     {
@@ -319,18 +362,22 @@
       "price": 2324936,
       "originalPrice": 2565000,
       "currency": "INR",
-      "description": "Classic design with powerful engine and comfort.",
+      "description": "German precision superbike with race-derived technology.",
       "image": "https://imgs.search.brave.com/MLnRAqJ4g5uJP1oieyiD9Nu6z06sKCBnl25db6XnvJc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWdr/LmFlcGxjZG4uY29t/LzY0MngzNjEvbi9j/dy9lYy8xOTE0MDUv/Ym13LXMxMDAwcnIt/cmlnaHQtc2lkZS12/aWV3Ny5qcGVnP2lz/aWc9MCZxPTc1",
       "featured": true,
       "rating": 4.4,
       "totalReviews": 567,
       "reviews": [
-        { "user": "Deepak S.", "rating": 5, "comment": "Timeless classic! Loving every ride." },
-        { "user": "Ravi K.", "rating": 4, "comment": "Great thump and comfortable rides." },
-        { "user": "Anita J.", "rating": 4, "comment": "Perfect for long highway rides." }
+        { "user": "Deepak S.", "rating": 5, "comment": "Pinnacle of superbike engineering!" },
+        { "user": "Ravi K.", "rating": 4, "comment": "Incredible on the track." },
+        { "user": "Anita J.", "rating": 4, "comment": "Best superbike under 25 lakh." }
       ],
       "itemprops": [
-        { "key": "HP", "value": "205" }
+        { "key": "Color", "value": "Light White / M Motorsport" },
+        { "key": "Engine", "value": "999cc Inline-4" },
+        { "key": "RPM", "value": "13500 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
+        { "key": "HP", "value": "205 hp" }
       ]
     },
     {
@@ -340,18 +387,21 @@
       "price": 3416000,
       "originalPrice": 4959000,
       "currency": "INR",
-      "description": "Stylish sedan with advanced safety features and comfort.",
+      "description": "India's most iconic ladder-frame SUV with off-road prowess.",
       "image": "https://static3.toyotabharat.com/images/showroom/fortuner/fortuner-mmc/new-fortuner.webp",
       "featured": true,
       "rating": 4.5,
       "totalReviews": 234,
       "reviews": [
         { "user": "Rahul S.", "rating": 5, "comment": "Excellent comfort and driving experience!" },
-        { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for its class." },
-        { "user": "Amit K.", "rating": 5, "comment": "Best sedan in this price range." }
+        { "user": "Priya M.", "rating": 4, "comment": "Great road presence and reliability." },
+        { "user": "Amit K.", "rating": 5, "comment": "Best 7-seater SUV for Indian roads." }
       ],
       "itemprops": [
-        { "key": "Engine", "value": "2.8L Diesel" }
+        { "key": "Color", "value": "Platinum White Pearl" },
+        { "key": "Engine", "value": "2.8L GD Turbo Diesel" },
+        { "key": "RPM", "value": "3400 rpm" },
+        { "key": "Capacity", "value": "7 Seater" }
       ]
     },
     {
@@ -361,17 +411,21 @@
       "price": 34999,
       "originalPrice": 44999,
       "currency": "INR",
-      "description": "Fast performance, 100W charging, smooth experience.",
+      "description": "Unique Glyph Interface phone with clean Nothing OS experience.",
       "image": "https://imgs.search.brave.com/_8xKzsucYHNzZXVnfxBpTD0IGRrKeCgQ9dJ0t4c4IXA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mZG4u/Z3NtYXJlbmEuY29t/L2ltZ3Jvb3QvcmV2/aWV3cy8yMi9ub3Ro/aW5nLXBob25lLTEv/bGlmZXN0eWxlLy0x/MDI0dzIvZ3NtYXJl/bmFfMDExLmpwZw",
       "featured": true,
       "rating": 4.4,
       "totalReviews": 654,
       "reviews": [
-        { "user": "Rahul C.", "rating": 5, "comment": "100W charging is a game changer!" },
-        { "user": "Neeraj K.", "rating": 4, "comment": "Smooth performance, great value." },
+        { "user": "Rahul C.", "rating": 5, "comment": "The glyph interface is so unique!" },
+        { "user": "Neeraj K.", "rating": 4, "comment": "Clean OS and great design." },
         { "user": "Shweta P.", "rating": 4, "comment": "Excellent phone for the price." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Dark Grey" },
+        { "key": "Chip", "value": "Snapdragon 8+ Gen 1" },
+        { "key": "Screen Size", "value": "6.7-inch LTPO OLED" },
+        { "key": "Battery", "value": "4700 mAh" },
         { "key": "Glyph", "value": "Version 2.0" }
       ]
     },
@@ -382,18 +436,21 @@
       "price": 2803000,
       "originalPrice": 2856000,
       "currency": "INR",
-      "description": "Powerful performance with aggressive styling.",
+      "description": "Iconic American cruiser with massive presence and V-Twin power.",
       "image": "https://images.unsplash.com/photo-1646904473811-a6a4b3a0a508?q=80&w=774&auto=format&fit=crop",
       "featured": false,
       "rating": 4.7,
       "totalReviews": 389,
       "reviews": [
-        { "user": "Rohit M.", "rating": 5, "comment": "Beast on the streets! Incredible power." },
-        { "user": "Pooja K.", "rating": 4, "comment": "Aggressive styling, turns heads everywhere." },
-        { "user": "Sanjay V.", "rating": 5, "comment": "Best naked sports bike in segment." }
+        { "user": "Rohit M.", "rating": 5, "comment": "Nothing sounds like a Harley V-Twin!" },
+        { "user": "Pooja K.", "rating": 4, "comment": "Iconic styling, turns heads everywhere." },
+        { "user": "Sanjay V.", "rating": 5, "comment": "Best cruiser motorcycle money can buy." }
       ],
       "itemprops": [
-        { "key": "Engine", "value": "Milwaukee-Eight 114" }
+        { "key": "Color", "value": "Vivid Black" },
+        { "key": "Engine", "value": "1868cc Milwaukee-Eight 117" },
+        { "key": "RPM", "value": "5020 rpm" },
+        { "key": "Capacity", "value": "2 Seater" }
       ]
     },
     {
@@ -403,18 +460,22 @@
       "price": 109990,
       "originalPrice": 134990,
       "currency": "INR",
-      "description": "Business laptop with powerful performance and security.",
+      "description": "High-performance gaming laptop with RTX 4060 and 144Hz display.",
       "image": "https://cdn.mos.cms.futurecdn.net/iATyhDP3bd5cX9Jn5TsTiM-1920-80.jpg.webp",
       "featured": true,
       "rating": 4.7,
       "totalReviews": 298,
       "reviews": [
-        { "user": "Arunima S.", "rating": 5, "comment": "Best business laptop! Very secure and fast." },
+        { "user": "Arunima S.", "rating": 5, "comment": "Best gaming laptop in this budget!" },
         { "user": "Manish P.", "rating": 5, "comment": "Reliable workhorse with great keyboard." },
-        { "user": "Vidya R.", "rating": 4, "comment": "Perfect for corporate use." }
+        { "user": "Vidya R.", "rating": 4, "comment": "Perfect for gaming and work both." }
       ],
       "itemprops": [
-        { "key": "GPU", "value": "RTX 4060" }
+        { "key": "Color", "value": "Onyx Grey" },
+        { "key": "Processor", "value": "AMD Ryzen 7 7745HX" },
+        { "key": "GPU", "value": "RTX 4060" },
+        { "key": "RAM", "value": "16GB DDR5" },
+        { "key": "Display", "value": "15.6-inch 144Hz IPS" }
       ]
     },
     {
@@ -424,18 +485,21 @@
       "price": 1050000,
       "originalPrice": 1900000,
       "currency": "INR",
-      "description": "Stylish sedan with advanced safety features and comfort.",
+      "description": "German-engineered sedan with sporty handling and 5-star safety.",
       "image": "https://cdn-s3.autocarindia.com/volkswagen/Virtus/500_8133.jpg?w=640&q=75",
       "featured": true,
       "rating": 4.5,
       "totalReviews": 234,
       "reviews": [
-        { "user": "Rahul S.", "rating": 5, "comment": "Excellent comfort and driving experience!" },
-        { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for its class." },
-        { "user": "Amit K.", "rating": 5, "comment": "Best sedan in this price range." }
+        { "user": "Rahul S.", "rating": 5, "comment": "Excellent build quality and driving feel!" },
+        { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for a turbo petrol." },
+        { "user": "Amit K.", "rating": 5, "comment": "Best sedan under 15 lakh in India." }
       ],
       "itemprops": [
-        { "key": "TSI", "value": "1.5L" }
+        { "key": "Color", "value": "Candy White" },
+        { "key": "Engine", "value": "1.5L TSI EVO Petrol" },
+        { "key": "RPM", "value": "5500 rpm" },
+        { "key": "Capacity", "value": "5 Seater" }
       ]
     },
     {
@@ -445,17 +509,21 @@
       "price": 2401955,
       "originalPrice": 2660000,
       "currency": "INR",
-      "description": "Classic design with powerful engine and comfort.",
+      "description": "World's largest production engine cruiser with shaft drive.",
       "image": "https://images.unsplash.com/photo-1740750047356-47f64339d196?q=80&w=387&auto=format&fit=crop",
       "featured": true,
       "rating": 4.4,
       "totalReviews": 567,
       "reviews": [
-        { "user": "Deepak S.", "rating": 5, "comment": "Timeless classic! Loving every ride." },
-        { "user": "Ravi K.", "rating": 4, "comment": "Great thump and comfortable rides." },
-        { "user": "Anita J.", "rating": 4, "comment": "Perfect for long highway rides." }
+        { "user": "Deepak S.", "rating": 5, "comment": "2458cc of pure torque bliss!" },
+        { "user": "Ravi K.", "rating": 4, "comment": "Great thump and comfortable long rides." },
+        { "user": "Anita J.", "rating": 4, "comment": "Perfect grand tourer for highways." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Phantom Black" },
+        { "key": "Engine", "value": "2458cc Inline-3" },
+        { "key": "RPM", "value": "6000 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
         { "key": "CC", "value": "2458cc" }
       ]
     },
@@ -466,17 +534,21 @@
       "price": 99999,
       "originalPrice": 129900,
       "currency": "INR",
-      "description": "Powerful M2 chip, sleek design, all-day battery.",
+      "description": "Versatile 2-in-1 tablet laptop with high-res touch display.",
       "image": "https://images.unsplash.com/photo-1682939634606-363829072b91?q=80&w=464&auto=format&fit=crop",
       "featured": true,
       "rating": 4.8,
       "totalReviews": 765,
       "reviews": [
-        { "user": "Priyanka D.", "rating": 5, "comment": "M2 chip is incredibly fast! Love it." },
-        { "user": "Suresh N.", "rating": 5, "comment": "Sleek design and amazing battery life." },
+        { "user": "Priyanka D.", "rating": 5, "comment": "Perfect 2-in-1 for productivity!" },
+        { "user": "Suresh N.", "rating": 5, "comment": "Sleek design and amazing display." },
         { "user": "Mehak K.", "rating": 4, "comment": "Perfect for work and travel." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Platinum" },
+        { "key": "Processor", "value": "Intel Core i7-1265U" },
+        { "key": "RAM", "value": "16GB LPDDR5" },
+        { "key": "Display", "value": "13-inch PixelSense 120Hz" },
         { "key": "CPU", "value": "Intel i7" }
       ]
     },
@@ -487,18 +559,21 @@
       "price": 7461000,
       "originalPrice": 8500000,
       "currency": "INR",
-      "description": "Stylish sedan with advanced safety features and comfort.",
+      "description": "Legendary American muscle car with V8 power and iconic styling.",
       "image": "https://images.unsplash.com/photo-1591293836027-e05b48473b67?q=80&w=870&auto=format&fit=crop",
       "featured": true,
       "rating": 4.5,
       "totalReviews": 234,
       "reviews": [
-        { "user": "Rahul S.", "rating": 5, "comment": "Excellent comfort and driving experience!" },
-        { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for its class." },
-        { "user": "Amit K.", "rating": 5, "comment": "Best sedan in this price range." }
+        { "user": "Rahul S.", "rating": 5, "comment": "The V8 roar is just unforgettable!" },
+        { "user": "Priya M.", "rating": 4, "comment": "Pure American muscle on Indian roads." },
+        { "user": "Amit K.", "rating": 5, "comment": "Best sports car for under 80 lakh." }
       ],
       "itemprops": [
-        { "key": "Engine", "value": "5.0L Coyote V8" }
+        { "key": "Color", "value": "Race Red" },
+        { "key": "Engine", "value": "5.0L Coyote V8" },
+        { "key": "RPM", "value": "7500 rpm" },
+        { "key": "Capacity", "value": "4 Seater" }
       ]
     },
     {
@@ -508,18 +583,22 @@
       "price": 2039233,
       "originalPrice": 2200000,
       "currency": "INR",
-      "description": "155cc sports bike with great mileage and speed.",
+      "description": "MotoGP-inspired superbike with crossplane inline-4 engine.",
       "image": "https://images.unsplash.com/photo-1626840362735-afb64615318d?q=80&w=387&auto=format&fit=crop",
       "featured": true,
       "rating": 4.6,
       "totalReviews": 432,
       "reviews": [
-        { "user": "Arun P.", "rating": 5, "comment": "Best sports bike under 2 lakh!" },
+        { "user": "Arun P.", "rating": 5, "comment": "The crossplane engine sound is incredible!" },
         { "user": "Vikash R.", "rating": 5, "comment": "Amazing performance and handling." },
-        { "user": "Sneha D.", "rating": 4, "comment": "Great mileage for a sports bike." }
+        { "user": "Sneha D.", "rating": 4, "comment": "True MotoGP feel on public roads." }
       ],
       "itemprops": [
-        { "key": "Tech", "value": "Crossplane" }
+        { "key": "Color", "value": "Matte Raven Black" },
+        { "key": "Engine", "value": "998cc Crossplane Inline-4" },
+        { "key": "RPM", "value": "13500 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
+        { "key": "Tech", "value": "Crossplane CP4" }
       ]
     },
     {
@@ -529,7 +608,7 @@
       "price": 124990,
       "originalPrice": 149990,
       "currency": "INR",
-      "description": "2-in-1 laptop with touchscreen and long battery life.",
+      "description": "Premium 2-in-1 convertible with OLED display and long battery.",
       "image": "https://images.unsplash.com/photo-1599299009482-3b5326fc52e4?q=80&w=870&auto=format&fit=crop",
       "featured": true,
       "rating": 4.6,
@@ -539,7 +618,11 @@
         { "user": "Ritu K.", "rating": 4, "comment": "Perfect for creative professionals." }
       ],
       "itemprops": [
-        { "key": "Nits", "value": "400" }
+        { "key": "Color", "value": "Nightfall Black" },
+        { "key": "Processor", "value": "Intel Core Ultra 7" },
+        { "key": "RAM", "value": "16GB LPDDR5" },
+        { "key": "Display", "value": "13.5-inch OLED Touch" },
+        { "key": "Nits", "value": "400 nits" }
       ]
     },
     {
@@ -549,16 +632,20 @@
       "price": 17200000,
       "originalPrice": 19529000,
       "currency": "INR",
-      "description": "Premium sedan with elegant design and smooth drive.",
+      "description": "Luxury electric grand tourer with 523 bhp and rapid charging.",
       "image": "https://images.unsplash.com/photo-1615222874898-37089fcf47ee?q=80&w=465&auto=format&fit=crop",
       "featured": true,
       "rating": 4.6,
       "totalReviews": 156,
       "reviews": [
         { "user": "Sandeep R.", "rating": 5, "comment": "Elegant design and superb handling." },
-        { "user": "Meera T.", "rating": 4, "comment": "Comfortable ride quality." }
+        { "user": "Meera T.", "rating": 4, "comment": "Comfortable ride quality and silent cabin." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Daytona Grey" },
+        { "key": "Engine", "value": "390kW Dual Electric Motor" },
+        { "key": "RPM", "value": "8700 rpm" },
+        { "key": "Capacity", "value": "4 Seater" },
         { "key": "0-100", "value": "3.3s" }
       ]
     },
@@ -569,17 +656,21 @@
       "price": 1806885,
       "originalPrice": 1950000,
       "currency": "INR",
-      "description": "155cc sports bike with great mileage and speed.",
+      "description": "Legendary hypersport touring motorcycle with class-leading speed.",
       "image": "https://images.unsplash.com/photo-1719161107534-6dc58147c3a4?q=80&w=774&auto=format&fit=crop",
       "featured": true,
       "rating": 4.6,
       "totalReviews": 432,
       "reviews": [
-        { "user": "Arun P.", "rating": 5, "comment": "Best sports bike under 2 lakh!" },
-        { "user": "Vikash R.", "rating": 5, "comment": "Amazing performance and handling." },
-        { "user": "Sneha D.", "rating": 4, "comment": "Great mileage for a sports bike." }
+        { "user": "Arun P.", "rating": 5, "comment": "The Busa is still unmatched in its class!" },
+        { "user": "Vikash R.", "rating": 5, "comment": "Amazing high-speed stability." },
+        { "user": "Sneha D.", "rating": 4, "comment": "Comfortable for long touring runs." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Metallic Mystic Silver / Pearl Vigor Blue" },
+        { "key": "Engine", "value": "1340cc Liquid-Cooled Inline-4" },
+        { "key": "RPM", "value": "9700 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
         { "key": "Top Speed", "value": "299 km/h" }
       ]
     },
@@ -590,17 +681,21 @@
       "price": 27400000,
       "originalPrice": 30000000,
       "currency": "INR",
-      "description": "Luxury and performance combined in one.",
+      "description": "Pure, naturally aspirated driver's car built for the track.",
       "image": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=870&auto=format&fit=crop",
       "featured": true,
       "rating": 4.7,
       "totalReviews": 201,
       "reviews": [
-        { "user": "Rajiv M.", "rating": 5, "comment": "Pure luxury on wheels!" },
-        { "user": "Sunita A.", "rating": 5, "comment": "Best in class comfort and style." },
+        { "user": "Rajiv M.", "rating": 5, "comment": "Pure driving perfection!" },
+        { "user": "Sunita A.", "rating": 5, "comment": "Best naturally aspirated sports car ever." },
         { "user": "Karan B.", "rating": 4, "comment": "Great car but expensive maintenance." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Guards Red" },
+        { "key": "Engine", "value": "4.0L Flat-6 NA" },
+        { "key": "RPM", "value": "9000 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
         { "key": "Weight", "value": "1435 kg" }
       ]
     },
@@ -611,18 +706,22 @@
       "price": 249990,
       "originalPrice": 299990,
       "currency": "INR",
-      "description": "Business laptop with powerful performance and security.",
+      "description": "Desktop-replacement gaming behemoth with 18-inch QHD+ display.",
       "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/alienware-notebooks/alienware-m18-mlk/media-gallery/hd/laptop-alienware-m18-r2-hd-perkey-intel-bk-gallery-2.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=522&qlt=100,1&resMode=sharp2&size=522,402&chrss=full",
       "featured": true,
       "rating": 4.7,
       "totalReviews": 298,
       "reviews": [
-        { "user": "Arunima S.", "rating": 5, "comment": "Best business laptop! Very secure and fast." },
-        { "user": "Manish P.", "rating": 5, "comment": "Reliable workhorse with great keyboard." },
-        { "user": "Vidya R.", "rating": 4, "comment": "Perfect for corporate use." }
+        { "user": "Arunima S.", "rating": 5, "comment": "Best desktop-replacement gaming laptop!" },
+        { "user": "Manish P.", "rating": 5, "comment": "Absolutely monstrous performance." },
+        { "user": "Vidya R.", "rating": 4, "comment": "Heavy but worth every rupee." }
       ],
       "itemprops": [
-        { "key": "Display", "value": "18-inch QHD+" }
+        { "key": "Color", "value": "Dark Metallic Moon" },
+        { "key": "Processor", "value": "Intel Core i9-13980HX" },
+        { "key": "GPU", "value": "RTX 4090" },
+        { "key": "RAM", "value": "32GB DDR5" },
+        { "key": "Display", "value": "18-inch QHD+ 240Hz" }
       ]
     },
     {
@@ -632,17 +731,21 @@
       "price": 6458000,
       "originalPrice": 7165000,
       "currency": "INR",
-      "description": "Stylish sedan with advanced safety features and comfort.",
+      "description": "Iconic off-road legend with removable doors and roof.",
       "image": "https://images.unsplash.com/photo-1640021042546-2a1b900f324b?q=80&w=464&auto=format&fit=crop",
       "featured": true,
       "rating": 4.5,
       "totalReviews": 234,
       "reviews": [
-        { "user": "Rahul S.", "rating": 5, "comment": "Excellent comfort and driving experience!" },
-        { "user": "Priya M.", "rating": 4, "comment": "Great fuel economy for its class." },
-        { "user": "Amit K.", "rating": 5, "comment": "Best sedan in this price range." }
+        { "user": "Rahul S.", "rating": 5, "comment": "No other car can match it off-road!" },
+        { "user": "Priya M.", "rating": 4, "comment": "The removable roof is pure freedom." },
+        { "user": "Amit K.", "rating": 5, "comment": "Best off-roader money can buy in India." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Firecracker Red" },
+        { "key": "Engine", "value": "2.0L Turbo Petrol" },
+        { "key": "RPM", "value": "5250 rpm" },
+        { "key": "Capacity", "value": "5 Seater" },
         { "key": "Offroad", "value": "Rock-Trac 4WD" }
       ]
     },
@@ -653,18 +756,22 @@
       "price": 277268,
       "originalPrice": 320000,
       "currency": "INR",
-      "description": "Powerful performance with aggressive styling.",
+      "description": "Aggressive naked streetfighter with superbike DNA.",
       "image": "https://images.unsplash.com/photo-1591378603223-e15b45a81640?q=80&w=870&auto=format&fit=crop",
       "featured": false,
       "rating": 4.7,
       "totalReviews": 389,
       "reviews": [
-        { "user": "Rohit M.", "rating": 5, "comment": "Beast on the streets! Incredible power." },
+        { "user": "Rohit M.", "rating": 5, "comment": "Best naked bike under 3 lakh!" },
         { "user": "Pooja K.", "rating": 4, "comment": "Aggressive styling, turns heads everywhere." },
         { "user": "Sanjay V.", "rating": 5, "comment": "Best naked sports bike in segment." }
       ],
       "itemprops": [
-        { "key": "Weight", "value": "165kg" }
+        { "key": "Color", "value": "Orange" },
+        { "key": "Engine", "value": "399cc Single-Cylinder LC" },
+        { "key": "RPM", "value": "9000 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
+        { "key": "Weight", "value": "165 kg" }
       ]
     },
     {
@@ -674,17 +781,21 @@
       "price": 25999,
       "originalPrice": 34999,
       "currency": "INR",
-      "description": "Fast performance, 100W charging, smooth experience.",
+      "description": "Sleek mid-ranger with 144Hz pOLED and 125W turbo charging.",
       "image": "https://amateurphotographer.com/wp-content/uploads/sites/7/2024/05/Motorola-Edge-50-Pro-closeup-of-cameras-e1741256801259.jpg?w=900",
       "featured": true,
       "rating": 4.4,
       "totalReviews": 654,
       "reviews": [
-        { "user": "Rahul C.", "rating": 5, "comment": "100W charging is a game changer!" },
+        { "user": "Rahul C.", "rating": 5, "comment": "125W charging is blazing fast!" },
         { "user": "Neeraj K.", "rating": 4, "comment": "Smooth performance, great value." },
         { "user": "Shweta P.", "rating": 4, "comment": "Excellent phone for the price." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Black Beauty" },
+        { "key": "Chip", "value": "Snapdragon 7 Gen 3" },
+        { "key": "Screen Size", "value": "6.7-inch pOLED" },
+        { "key": "Battery", "value": "4500 mAh" },
         { "key": "Display", "value": "144Hz pOLED" }
       ]
     },
@@ -695,17 +806,21 @@
       "price": 54999,
       "originalPrice": 69999,
       "currency": "INR",
-      "description": "Powerful Android phone with stunning display.",
+      "description": "Ultimate gaming smartphone with 165Hz display and AeroActive Cooler.",
       "image": "https://www.cnet.com/a/img/resize/d3abe24000cb0a0039f997b46ab22e3945781eed/hub/2024/01/14/c12c1958-45aa-40ea-9bbb-8ed19f4fa6fe/p1000268.jpg?auto=webp&width=1200",
       "featured": true,
       "rating": 4.5,
       "totalReviews": 876,
       "reviews": [
-        { "user": "Vivek M.", "rating": 5, "comment": "Display is absolutely gorgeous!" },
-        { "user": "Kavita S.", "rating": 4, "comment": "Great camera and smooth performance." },
-        { "user": "Abhishek D.", "rating": 4, "comment": "Best Android flagship at this price." }
+        { "user": "Vivek M.", "rating": 5, "comment": "Best gaming phone, period!" },
+        { "user": "Kavita S.", "rating": 4, "comment": "Great performance and cool features." },
+        { "user": "Abhishek D.", "rating": 4, "comment": "Worth every rupee for gamers." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Phantom Black" },
+        { "key": "Chip", "value": "Snapdragon 8 Gen 3" },
+        { "key": "Screen Size", "value": "6.78-inch AMOLED 165Hz" },
+        { "key": "Battery", "value": "5500 mAh" },
         { "key": "Audio", "value": "3.5mm Jack Included" }
       ]
     },
@@ -716,16 +831,20 @@
       "price": 94990,
       "originalPrice": 119990,
       "currency": "INR",
-      "description": "2-in-1 laptop with touchscreen and long battery life.",
+      "description": "Gaming powerhouse with Tempest Cooling and QHD display.",
       "image": "https://images.unsplash.com/photo-1613750147830-c770850838b0?q=80&w=435&auto=format&fit=crop",
       "featured": true,
       "rating": 4.6,
       "totalReviews": 321,
       "reviews": [
-        { "user": "Deepak M.", "rating": 5, "comment": "Versatile 2-in-1 with brilliant display." },
-        { "user": "Ritu K.", "rating": 4, "comment": "Perfect for creative professionals." }
+        { "user": "Deepak M.", "rating": 5, "comment": "Great gaming laptop with excellent thermals." },
+        { "user": "Ritu K.", "rating": 4, "comment": "Perfect for gaming and creative work." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Mica Silver" },
+        { "key": "Processor", "value": "Intel Core i7-13700HX" },
+        { "key": "GPU", "value": "RTX 4060" },
+        { "key": "RAM", "value": "16GB DDR5" },
         { "key": "Cooling", "value": "Tempest Cooling" }
       ]
     },
@@ -736,17 +855,21 @@
       "price": 10300000,
       "originalPrice": 26200000,
       "currency": "INR",
-      "description": "Luxury and performance combined in one.",
+      "description": "Premium British off-road SUV with luxury interior and Terrain Response.",
       "image": "https://images.unsplash.com/photo-1722786102904-c6bf6bec8fc3?q=80&w=870&auto=format&fit=crop",
       "featured": true,
       "rating": 4.7,
       "totalReviews": 201,
       "reviews": [
-        { "user": "Rajiv M.", "rating": 5, "comment": "Pure luxury on wheels!" },
+        { "user": "Rajiv M.", "rating": 5, "comment": "Pure luxury meets off-road capability!" },
         { "user": "Sunita A.", "rating": 5, "comment": "Best in class comfort and style." },
         { "user": "Karan B.", "rating": 4, "comment": "Great car but expensive maintenance." }
       ],
       "itemprops": [
+        { "key": "Color", "value": "Fuji White" },
+        { "key": "Engine", "value": "2.0L Ingenium Petrol" },
+        { "key": "RPM", "value": "5500 rpm" },
+        { "key": "Capacity", "value": "5 Seater" },
         { "key": "Ground Clearance", "value": "291mm" }
       ]
     },
@@ -757,18 +880,23 @@
       "price": 89000000,
       "originalPrice": 99000000,
       "currency": "INR",
-      "description": "Luxury SUV with powerful performance and premium interior.",
+      "description": "Lamborghini's first PHEV hypercar combining V12 and three electric motors.",
       "image": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=870&auto=format&fit=crop",
       "featured": true,
       "rating": 4.8,
       "totalReviews": 189,
       "reviews": [
         { "user": "Vikram P.", "rating": 5, "comment": "Ultimate driving machine! Worth every rupee." },
-        { "user": "Neha G.", "rating": 5, "comment": "Luxury redefined. Amazing comfort." },
+        { "user": "Neha G.", "rating": 5, "comment": "The V12 sound is otherworldly." },
         { "user": "Arjun D.", "rating": 4, "comment": "Powerful engine but maintenance is expensive." }
       ],
       "itemprops": [
-        { "key": "Hybrid", "value": "V12 PHEV" }
+        { "key": "Color", "value": "Giallo Orion" },
+        { "key": "Engine", "value": "6498cc V12 + 3 Electric Motors" },
+        { "key": "RPM", "value": "9250 rpm" },
+        { "key": "Capacity", "value": "2 Seater" },
+        { "key": "Hybrid", "value": "V12 PHEV" },
+        { "key": "Max Power", "value": "1015 hp" }
       ]
     }
   ]
